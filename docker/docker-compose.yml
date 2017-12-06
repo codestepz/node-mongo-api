@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  mongodb:
+    image: mongo:3.4.2
+    container_name: docker-mongodb
+    restart: always
+    environment:
+      - AUTH=no
+      - TERM=xterm
+    volumes:
+      - ./data:/data/db
+      - ./backup:/backup
+    ports:
+      - "27017:27017"
+    command: mongod --smallfiles
