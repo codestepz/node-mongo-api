@@ -1,9 +1,9 @@
-version: '2'
+version: '3.3'
 
 services:
 
   mongodb:
-    image: mongo:3.4.2
+    image: mongo:3.6.0
     container_name: docker-mongodb
     restart: always
     environment:
@@ -14,4 +14,4 @@ services:
       - ./backup:/backup
     ports:
       - "27017:27017"
-    command: mongod --smallfiles
+#   command: mongod --smallfiles
